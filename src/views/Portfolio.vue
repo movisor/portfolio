@@ -6,8 +6,8 @@
 
         <router-link class="rtl" :to="'/portfolio/'+index">
 
-          <span>{{item.title}}</span>
-          <!--CARD-->
+          <ProjectBox :project="item"/>
+
         </router-link>
       </v-col>
 
@@ -17,11 +17,16 @@
 </template>
 
 <script>
-import Portfolio from '../assets/portfolio.json'
+import Portfolio from '../assets/portfolio.json';
+import ProjectBox from '../components/ProjectBox.vue';
+
 
 
 export default ({
   name: 'Portfolio',
+  components: {
+    ProjectBox,
+  },
   data(){
     return{
       portfolio: Portfolio,

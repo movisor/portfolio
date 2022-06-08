@@ -8,7 +8,8 @@
 </template>
 
 <script>
-import Portfolio from '../assets/portfolio.json'
+import Portfolio from '../assets/portfolio.json';
+
 
 
 export default ({
