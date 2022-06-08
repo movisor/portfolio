@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main>
+    
 
       <!--SIDEBAR-->
       <v-navigation-drawer>
@@ -8,17 +8,22 @@
       </v-navigation-drawer>
       <!--END SIDEBAR-->
 
+      <v-app-bar app v-if="this.$route.name != 'home'">
+      <!--HOME BUTTON ONLY IF $route != HOME-->
+      {{this.$route.name}}
+      </v-app-bar>
 
-      <v-content>
+
+      <v-main>
       <!--ROUTER VIEW-->
 
       <router-view />
 
       <!--END ROUTER VIEW-->
-      </v-content>
+      </v-main>
 
 
-      <v-bottom-navigation v-model="value" class="bottom_menu">
+      <v-bottom-navigation class="bottom_menu">
         <router-link class="rtl" to="/portfolio">
           <v-btn >
             <span class="menu_item">PORTFOLIO</span>
@@ -47,7 +52,7 @@
 
         
       </v-bottom-navigation>
-    </v-main>
+    
   </v-app>
 </template>
 
