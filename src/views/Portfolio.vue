@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
 
-      <v-col v-for="(item, index) in portfolio" lg="6" xl="6">
+      <v-col v-for="(item, index) in portfolio" cols="12" lg="6" xl="6">
 
         <router-link class="rtl" :to="'/portfolio/'+index">
 

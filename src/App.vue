@@ -3,18 +3,19 @@
     
 
       <!--SIDEBAR-->
-      <v-navigation-drawer>
-        test
+      <v-navigation-drawer v-model="drawer">
+        <!--INSERT SOCIAL ICONS HERE-->
       </v-navigation-drawer>
       <!--END SIDEBAR-->
 
       <v-app-bar app v-if="this.$route.name != 'home'">
       <!--HOME BUTTON ONLY IF $route != HOME-->
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       {{this.$route.name}}
       </v-app-bar>
 
 
-      <v-main>
+      <v-main :class="this.$route.name == 'project' ? 'bg_black' : ''">
       <!--ROUTER VIEW-->
 
       <router-view />
@@ -61,15 +62,18 @@
 export default {
   name: 'App',
 
-  data: () => ({
-    //
-  }),
+  data: () => ({ 
+    drawer: null
+    }),
 }
 </script>
 
 
 <style lang="scss">
-
+body{
+  font-family:Helvetica;
+  text-transform:uppercase;
+}
 .rtl{
   font-family: Helvetica;
     text-decoration: none;
@@ -80,6 +84,11 @@ export default {
     .menu_item{
       font-weight:bold;
     }
+}
+
+.bg_black{
+  background:black;
+  color:white;
 }
 
 </style>
